@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}404{% endblock title %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 error-container">
+      <p class="fs-1 text-center">Erreur 404</p>
+      <img src="{% static 'assets/img/404.jpg' %}" class="img-fluid" alt="Error 404" />
+      <p class="lead">Désolé, la page que vous recherchez est introuvable.</p>
+      <a href="/" class="btn btn-primary">Retour à la page d'accueil</a>
+    </div>
+  </div>
+  {% endblock %}
+</div>
