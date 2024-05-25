@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from profiles.models import Profile
 
 # Create your views here.
@@ -41,6 +41,6 @@ def profile(request, username):
     Returns:
         HttpResponse: The HTTP response object containing the rendered profile template.
     """
-    profile = Profile.objects.get(user__username=username)
+    profile = get_object_or_404(Profile, user__username=username)
     context = {"profile": profile}
     return render(request, "profiles/profile.html", context)

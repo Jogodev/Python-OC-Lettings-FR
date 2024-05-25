@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from lettings.models import Letting
 
 # Create your views here.
@@ -54,7 +54,7 @@ def letting(request, letting_id):
     Returns:
         HttpResponse: The response object which renders the 'lettings/letting.html' template with the context data.
     """
-    letting = Letting.objects.get(id=letting_id)
+    letting = get_object_or_404(Letting, pk=letting_id)
     context = {
         "title": letting.title,
         "address": letting.address,
