@@ -13,13 +13,15 @@ def index(request):
     """
     This view function handles the request to display all lettings.
 
-    It retrieves all lettings from the database and passes them to the template for rendering.
+    It retrieves all lettings from the database and passes them
+    to the template for rendering.
 
     Args:
         request (HttpRequest): The request object.
 
     Returns:
-        HttpResponse: The response object which renders the 'lettings/index.html' template with the context data.
+        HttpResponse: The response object which renders
+        the 'lettings/index.html' template with the context data.
     """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
@@ -45,14 +47,16 @@ def letting(request, letting_id):
     """
     This view function handles the request to display a specific letting.
 
-    It retrieves a letting with the given id from the database and passes it to the template for rendering.
+    It retrieves a letting with the given id from the database and passes
+    it to the template for rendering.
 
     Args:
         request (HttpRequest): The request object.
         letting_id (int): The id of the letting to be displayed.
 
     Returns:
-        HttpResponse: The response object which renders the 'lettings/letting.html' template with the context data.
+        HttpResponse: The response object which renders
+        the 'lettings/letting.html' template with the context data.
     """
     letting = get_object_or_404(Letting, pk=letting_id)
     context = {
