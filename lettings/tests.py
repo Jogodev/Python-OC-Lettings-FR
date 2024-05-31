@@ -1,6 +1,4 @@
-from unittest.mock import patch
-import pytest
-from django.test import TestCase, override_settings
+from django.test import TestCase
 from django.urls import reverse
 from lettings.models import Letting, Address
 
