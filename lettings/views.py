@@ -58,7 +58,7 @@ def letting(request, letting_id):
         HttpResponse: The response object which renders
         the 'lettings/letting.html' template with the context data.
     """
-    letting = get_object_or_404(Letting, pk=letting_id)
+    letting = Letting.objects.get(id=letting_id)
     context = {
         "title": letting.title,
         "address": letting.address,
