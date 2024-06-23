@@ -20,14 +20,14 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: python -m venv venv && . venv/bin/activate &&
+        run: python -m venv venv && . venv/scripts/activate &&
           pip install -r requirements.txt
 
       - name: Lint
-        run: flake8 ./home ./lettings ./oc_lettings_site ./profiles
+        run: . venv/flake8 ./home ./lettings ./oc_lettings_site ./profiles
 
       - name: Run test
-        run: python -m pytest ./home/tests/ --import-mode=importlib
+        run: python -m pytest tests/ --import-mode=importlib
 
     # - name: Upload coverage to Coveralls
     #   uses: coverallsapp/github-action@v2
