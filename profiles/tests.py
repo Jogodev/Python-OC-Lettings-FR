@@ -14,8 +14,6 @@ class ProfileViewTests(TestCase):
         response = self.client.get(reverse("profiles:index"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "profiles/index.html")
-        
-        
 
     def test_one_profile(self):
         response = self.client.get(reverse("profiles:profile", args=["testuser"]))
