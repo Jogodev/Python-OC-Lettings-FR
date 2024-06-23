@@ -1,8 +1,6 @@
 name: Django CI
 
 on: [push]
-#  push:
-#    branches: ["master", "dev"]
 
 jobs:
   build:
