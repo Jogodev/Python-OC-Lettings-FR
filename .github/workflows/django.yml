@@ -32,7 +32,7 @@ jobs:
       - name: Run test
         run: | 
           source venv/bin/activate 
-          pytest --ds=oc_lettings_site.settings --import-mode=importlib
+          pytest 
 
     # - name: Upload coverage to Coveralls
     #   uses: coverallsapp/github-action@v2
