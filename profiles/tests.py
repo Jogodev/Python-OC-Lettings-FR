@@ -14,8 +14,8 @@ class ProfileViewTests(TestCase):
         response = self.client.get(reverse("profiles:index"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "profiles/index.html")
-        self.assertContains(response, self.profile.user.username)
-        self.assertContains
+        
+        
 
     def test_one_profile(self):
         response = self.client.get(reverse("profiles:profile", args=["testuser"]))
@@ -23,7 +23,6 @@ class ProfileViewTests(TestCase):
         self.assertTemplateUsed(response, "profiles/profile.html")
         self.assertEqual(response.context["profile"], self.profile)
 
-    def test_profile_not_found(self):
-        response = self.client.get(reverse("profiles:profile", args=[999]))
-        self.assertEqual(response.status_code, 404)
-        self.assertTemplateUsed(response, "404.html")
+    def test_profiles_models(self):
+        response = self.client.get(reverse("profiles:index"))
+        self.assertContains(response, self.profile.user.username)

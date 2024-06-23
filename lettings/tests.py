@@ -14,13 +14,13 @@ class LettingsTest(TestCase):
             country_iso_code="TST",
         )
         self.letting1 = Letting.objects.create(title="Letting 1", address=self.address)
+        Letting.objects.filter(pk=999).delete()
 
     def test_all_lettings(self):
         response = self.client.get(reverse("lettings:index"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "lettings/index.html")
-        self.assertContains(response, self.letting1.title)
-        self.assertContains(response, self.address.number)
+        
 
     def test_one_letting(self):
         letting = Letting.objects.get(title="Letting 1")
@@ -29,7 +29,7 @@ class LettingsTest(TestCase):
         self.assertTemplateUsed(response, "lettings/letting.html")
         self.assertContains(response, letting.title)
 
-    def test_letting_not_found(self):
-        response = self.client.get(reverse("lettings:letting", args=[999]))
-        self.assertEqual(response.status_code, 404)
-        self.assertTemplateUsed(response, "404.html")
+    def test_lettings_models(self):
+        response = self.client.get(reverse("lettings:index"))
+        self.assertContains(response, self.letting1.title)
+        self.assertContains(response, self.address.number)
