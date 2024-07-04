@@ -3,7 +3,7 @@ import sentry_sdk
 
 from pathlib import Path
 
-from config import DJANGO_SECRET_KEY, SENTRY_DSN, DEBUGSTATE
+from config import SENTRY_DSN, DEBUGSTATE
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
