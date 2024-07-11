@@ -71,7 +71,9 @@ jobs:
     #   url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     # permissions:
     #   id-token: write #This is required for requesting the JWT
-        
+    permissions:
+      contents: read
+      id-token: write
     steps:
           #     - name: Download artifact from build job
           #       uses: actions/download-artifact@v3
@@ -89,7 +91,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           allow-no-subscriptions: true
           enable-AzPSSession: true
-          
+
     
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
