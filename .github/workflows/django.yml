@@ -95,4 +95,4 @@ jobs:
           #       with:
           #         app-name: 'lettingssite'
           #         slot-name: 'production'   
-                    images: ${{ secrets.DOCKER_USERNAME }}/lettingssite:latest   
+                    # images: ${{ secrets.DOCKER_USERNAME }}/lettingssite:latest   
