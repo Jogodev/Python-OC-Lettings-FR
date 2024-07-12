@@ -20,7 +20,6 @@ class LettingsTest(TestCase):
         response = self.client.get(reverse("lettings:index"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "lettings/index.html")
-        
 
     def test_one_letting(self):
         letting = Letting.objects.get(title="Letting 1")

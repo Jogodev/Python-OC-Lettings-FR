@@ -9,7 +9,7 @@ def custom_404_view(request, exception=None):
     Args:
         request (HttpRequest): The HTTP request object.
         exception (Exception, optional): The exception
-        that triggered the 404 error. Defaults to None.
+        that triggered the 404 error. Defaults to No.
 
     Returns:
         HttpResponse: The rendered 404.html template with a 404 status code.
@@ -27,7 +27,6 @@ def custom_500_view(request):
 
     Returns:
         HttpResponse: The rendered response with the "500.html" template.
-
     """
     sentry_sdk.capture_message("A 500 error occurred", "error")
     return render(request, "500.html", {}, status=500)
