@@ -9,7 +9,7 @@ def custom_404_view(request, exception=None):
     Args:
         request (HttpRequest): The HTTP request object.
         exception (Exception, optional): The exception
-        that triggered the 404 error. Defaults to None.
+        that triggered the 404 error. Defaults to No.
 
     Returns:
         HttpResponse: The rendered 404.html template with a 404 status code.
