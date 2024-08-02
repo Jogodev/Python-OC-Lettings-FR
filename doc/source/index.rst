@@ -13,5 +13,9 @@ documentation for details.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+
+   home
+   lettings
+   profiles
+   oc_lettings_site
 

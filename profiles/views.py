@@ -42,5 +42,5 @@ def profile(request, username):
         HttpResponse: The HTTP response object containing the rendered profile template.
     """
     profile = Profile.objects.get(user__username=username)
-    context = {'profile': profile}
+    context = {"profile": profile}
     return render(request, "profiles/profile.html", context)
