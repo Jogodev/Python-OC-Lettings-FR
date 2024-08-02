@@ -1,4 +1,4 @@
-alabaster==1.0.0
+alabaster==0.7.16
 asgiref==3.8.1
 Babel==2.15.0
 certifi==2024.2.2
@@ -7,7 +7,8 @@ colorama==0.4.6
 coverage==7.5.1
 distutils-pytest==0.2.1
 Django==3.0
-docutils==0.21.2
+django-environ==0.11.2
+docutils==0.20.1
 entrypoints==0.3
 flake8==3.7.0
 idna==3.7
@@ -30,10 +31,12 @@ requests==2.32.3
 sentry-sdk==2.3.1
 six==1.16.0
 snowballstemmer==2.2.0
-Sphinx==8.0.2
+Sphinx==7.4.7
+sphinx-rtd-theme==2.0.0
 sphinxcontrib-applehelp==2.0.0
 sphinxcontrib-devhelp==2.0.0
 sphinxcontrib-htmlhelp==2.1.0
+sphinxcontrib-jquery==4.1
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==2.0.0
 sphinxcontrib-serializinghtml==2.0.0
