@@ -2,8 +2,9 @@ import os
 import sentry_sdk
 
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
-from config import SENTRY_DSN, DJANGO_SECRET_KEY
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = DJANGO_SECRET_KEY
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 print(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -127,7 +128,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 sentry_sdk.init(
-    dsn=SENTRY_DSN,
+    dsn=os.getenv('SENTRY_DSN'),
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
 )
