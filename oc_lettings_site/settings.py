@@ -4,8 +4,6 @@ import sentry_sdk
 from pathlib import Path
 from dotenv import dotenv_values
 
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +21,6 @@ SECRET_KEY = config.get("DJANGO_SECRET_KEY", os.getenv("DJANGO_SECRET_KEY"))
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
