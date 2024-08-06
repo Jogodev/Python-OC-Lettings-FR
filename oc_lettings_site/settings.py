@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 config = dotenv_values(".env")
 
-SECRET_KEY = config.get("DJANGO_SECRET_KEY", os.getenv("DJANGO_SECRET_KEY"))
+SECRET_KEY = config.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
