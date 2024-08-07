@@ -12,10 +12,12 @@ documentation for details.
 
 
 .. toctree::
-   :maxdepth: 2
 
-   home
-   lettings
-   profiles
-   oc_lettings_site
+   description
+   instruction
+   quickstart
+   technologies
+   database
+   interfaces
+   deployment
 
