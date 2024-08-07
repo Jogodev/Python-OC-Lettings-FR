@@ -8,8 +8,11 @@
 
 import sys
 import os
+import django
 
 sys.path.insert(0, os.path.abspath('../../'))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "oc_lettings_site.settings")
+django.setup()
 
 project = 'Lettings '
 copyright = '2024, Jogodev'
