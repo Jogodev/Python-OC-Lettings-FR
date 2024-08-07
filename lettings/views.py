@@ -21,7 +21,7 @@ def index(request):
 
     Returns:
         HttpResponse: The response object which renders
-        the 'lettings/index.html' template with the context data.
+        the 'lettings/index.html' template with the context data..
     """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
