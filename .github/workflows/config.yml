@@ -34,10 +34,6 @@ jobs:
 
       - name: Run test
         run: | 
-          export SECRET_KEY="${{ secrets.SECRET_KEY }}"
-          export DJANGO_SETTINGS_MODULE="${{ secrets.DJANGO_SETTINGS_MODULE }}"
-          echo "SECRET_KEY=${SECRET_KEY}"
-          echo "DJANGO_SETTINGS_MODULE=${DJANGO_SETTINGS_MODULE}"
           source venv/bin/activate 
           pytest
 
@@ -63,4 +59,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:latest            
+          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:latest         
