@@ -1,9 +1,6 @@
 name: Lettings site CI
 
-on: 
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
   build:
@@ -34,13 +31,10 @@ jobs:
 
       - name: Run test
         run: | 
+          export SECRET_KEY="${{ secrets.SECRET_KEY }}"
+          export DJANGO_SETTINGS_MODULE="${{ secrets.DJANGO_SETTINGS_MODULE }}"
           source venv/bin/activate 
           pytest
-
-    # - name: Upload coverage to Coveralls
-    #   uses: coverallsapp/github-action@v2
-    #   with:
-    #     github-token: ${{ secrets.GITHUB_TOKEN }}
 
   build_and_push_docker:
     runs-on: ubuntu-latest
@@ -64,4 +58,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:latest            
+          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:latest         
