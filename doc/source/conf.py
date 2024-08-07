@@ -6,16 +6,6 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-import sys
-import os
-import django
-from django.conf import settings
-
-sys.path.insert(0, os.path.abspath('../../'))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'oc_lettings_site.settings'
-django.setup()
-print("Django SECRET_KEY:", getattr(settings, 'SECRET_KEY', 'Not Set'))
-
 project = 'Lettings '
 copyright = '2024, Jogodev'
 author = 'Jogodev'

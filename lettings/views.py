@@ -11,7 +11,7 @@ from lettings.models import Letting
 # posuere cubilia curae; Cras eget scelerisque
 def index(request):
     """
-    This view function handles the request to display all letting.
+    This view function handles the request to display all.
 
     It retrieves all lettings from the database and passes them
     to the template for rendering.
