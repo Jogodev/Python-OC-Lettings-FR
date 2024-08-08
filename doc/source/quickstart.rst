@@ -1,11 +1,12 @@
 Quick Start
 ===========
 
-1. Create virtual environnement: ::
+
+1. **Create virtual environnement** ::
 
     cd python -m venv venv
 
-2. Activate the virtual environment: ::
+2. **Activate the virtual environment** ::
 
     Windows:
 
@@ -15,17 +16,17 @@ Quick Start
     
     source venv/scripts/activate
 
-3. Install dependencies: ::
+3. **Install dependencies** ::
 
     pip install -r requirements.txt
 
-4. Add a .env file with the following variables: ::
+4. **Add a .env file with the following variables** ::
 
     SENTRY_DSN = « Your sentry DSN »
 
     SECRET_KEY = « Your django SECRET KET »
 
-5. Run the development server: ::
+5. **Run the development server** ::
 
     python manage.py runserver         
 

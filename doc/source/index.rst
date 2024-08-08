@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Lettings documentation
-======================
+Orange Lettings County documentation
+====================================
 
 Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
@@ -12,6 +12,8 @@ documentation for details.
 
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Summary:
 
    description
    instruction
@@ -20,4 +22,5 @@ documentation for details.
    database
    interfaces
    deployment
+   userguide
 
