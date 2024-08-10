@@ -1,3 +1,8 @@
+.. image:: https://img.shields.io/pypi/pyversions/python%203.11
+   :alt: PyPI - Python Version
+
+
+
 ## Résumé
 
 Site web d'Orange County Lettings

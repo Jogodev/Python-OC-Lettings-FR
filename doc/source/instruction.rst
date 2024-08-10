@@ -1,5 +1,5 @@
-Get the project and quick start
-===============================
+Get the project 
+===============
 
 To get the project, follow these steps:
 

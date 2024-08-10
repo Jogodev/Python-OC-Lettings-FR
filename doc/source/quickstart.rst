@@ -31,3 +31,16 @@ Quick Start
     python manage.py runserver         
 
 6. Go to your browser at the address http://localhost:8000
+
+With docker
+===========
+
+1. **Build the image at the root** ::
+
+    docker build -t [tag] .
+
+2. **Run the container** ::
+
+    docker run -d -p [8000:8000] [tag]
+
+3. Go to your browser at the address http://localhost:8000
