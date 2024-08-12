@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from lettings.models import Letting
-import logging
 
 # Create your views here.
 

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from profiles.models import Profile
-import logging
 
 # Create your views here.
 
