@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import sentry_sdk
+import logging
 
 
 def custom_404_view(request, exception=None):
