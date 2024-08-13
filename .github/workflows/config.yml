@@ -37,7 +37,10 @@ jobs:
           export SECRET_KEY="${{ secrets.SECRET_KEY }}"
           export DJANGO_SETTINGS_MODULE="${{ secrets.DJANGO_SETTINGS_MODULE }}"
           source venv/bin/activate 
-          pytest
+          coverage run -m pytest  # Exécute les tests avec coverage
+          coverage report          # Affiche le rapport de couverture
+          coverage xml             # Génère un fichier XML pour l'analyse future
+          coverage report --fail-under=100  # Échoue si la couverture est inférieure à 100%
 
   build_and_push_docker:
     runs-on: ubuntu-latest
