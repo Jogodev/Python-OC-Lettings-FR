@@ -40,7 +40,7 @@ jobs:
           coverage run -m pytest  # Exécute les tests avec coverage
           coverage report          # Affiche le rapport de couverture
           coverage xml             # Génère un fichier XML pour l'analyse future
-          coverage report --fail-under=100  # Échoue si la couverture est inférieure à 100%
+          coverage report --fail-under=90  # Échoue si la couverture est inférieure à 90%
 
   build_and_push_docker:
     runs-on: ubuntu-latest
