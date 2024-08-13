@@ -28,6 +28,7 @@ def index(request):
         logging.error(f"An unexpected error occurred while retrieving profiless: {e}")
         return render(request, "500.html", status=404)
 
+
 # Aliquam sed metus eget nisi tincidunt ornare accumsan eget lac
 # laoreet neque quis, pellentesque dui. Nullam
 # facilisis pharetra vulputate. Sed tincidunt, dolor

@@ -31,7 +31,7 @@ def index(request):
     except Exception as e:
         logging.error(f"An unexpected error occurred while retrieving lettings: {e}")
         return render(request, "500.html", status=500)
-    
+
 
 # Cras ultricies dignissim purus, vitae hendrerit ex varius non.
 # In accumsan porta nisl id eleifend. Praesent
