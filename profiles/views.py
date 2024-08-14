@@ -26,7 +26,7 @@ def index(request):
         return render(request, "profiles/index.html", context)
     except Exception as e:
         logging.error(f"An unexpected error occurred while retrieving profiless: {e}")
-        return render(request, "500.html", status=404)
+        return render(request, "500.html", status=500)
 
 
 # Aliquam sed metus eget nisi tincidunt ornare accumsan eget lac

@@ -16,6 +16,13 @@ class LettingsTest(TestCase):
         self.letting1 = Letting.objects.create(title="Letting 1", address=self.address)
         Letting.objects.filter(pk=999).delete()
 
+    def test_index_view_no_lettings(self):
+        Letting.objects.all().delete()
+        response = self.client.get(reverse("lettings:index"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "lettings/index.html")
+        self.assertNotContains(response, self.letting1.title)    
+
     def test_all_lettings(self):
         response = self.client.get(reverse("lettings:index"))
         self.assertEqual(response.status_code, 200)
@@ -32,3 +39,8 @@ class LettingsTest(TestCase):
         response = self.client.get(reverse("lettings:index"))
         self.assertContains(response, self.letting1.title)
         self.assertContains(response, self.address.number)
+
+    def test_letting_view_not_found(self):
+        response = self.client.get(reverse("lettings:letting", args=[999]))
+        self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed(response, "404.html")    
