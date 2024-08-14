@@ -37,7 +37,10 @@ jobs:
           export SECRET_KEY="${{ secrets.SECRET_KEY }}"
           export DJANGO_SETTINGS_MODULE="${{ secrets.DJANGO_SETTINGS_MODULE }}"
           source venv/bin/activate 
-          pytest
+          coverage run -m pytest  # Exécute les tests avec coverage
+          coverage report          # Affiche le rapport de couverture
+          coverage xml             # Génère un fichier XML pour l'analyse future
+          coverage report --fail-under=80  # Échoue si la couverture est inférieure à 80%
 
   build_and_push_docker:
     runs-on: ubuntu-latest
@@ -57,9 +60,13 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}  
 
+      - name: Get Git commit hash
+        id: git-commit
+        run: echo "COMMIT-HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV 
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:latest 
+          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:${{ env.GIT_COMMIT }} 

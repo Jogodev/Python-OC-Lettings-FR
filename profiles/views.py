@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from profiles.models import Profile
+import logging
 
 # Create your views here.
 
@@ -19,9 +20,13 @@ def index(request):
     Returns:
         A rendered HTML response containing the index page with a list of profiles.
     """
-    profiles_list = Profile.objects.all()
-    context = {"profiles_list": profiles_list}
-    return render(request, "profiles/index.html", context)
+    try:
+        profiles_list = Profile.objects.all()
+        context = {"profiles_list": profiles_list}
+        return render(request, "profiles/index.html", context)
+    except Exception as e:
+        logging.error(f"An unexpected error occurred while retrieving profiless: {e}")
+        return render(request, "500.html", status=404)
 
 
 # Aliquam sed metus eget nisi tincidunt ornare accumsan eget lac
@@ -41,6 +46,13 @@ def profile(request, username):
     Returns:
         HttpResponse: The HTTP response object containing the rendered profile template.
     """
-    profile = Profile.objects.get(user__username=username)
-    context = {"profile": profile}
-    return render(request, "profiles/profile.html", context)
+    try:
+        profile = Profile.objects.get(user__username=username)
+        context = {"profile": profile}
+        return render(request, "profiles/profile.html", context)
+    except Profile.DoesNotExist:
+        logging.error(f"Profile with username {username} does not exist.")
+        return render(request, "404.html", status=404)
+    except Exception as e:
+        logging.error(f"An unexpected error occurred: {e}")
+        return render(request, "500.html", status=500)

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from lettings.models import Letting
+import logging
 
 # Create your views here.
 
@@ -23,9 +24,13 @@ def index(request):
         HttpResponse: The response object which renders
         the 'lettings/index.html' template with the context data.
     """
-    lettings_list = Letting.objects.all()
-    context = {"lettings_list": lettings_list}
-    return render(request, "lettings/index.html", context)
+    try:
+        lettings_list = Letting.objects.all()
+        context = {"lettings_list": lettings_list}
+        return render(request, "lettings/index.html", context)
+    except Exception as e:
+        logging.error(f"An unexpected error occurred while retrieving lettings: {e}")
+        return render(request, "500.html", status=500)
 
 
 # Cras ultricies dignissim purus, vitae hendrerit ex varius non.
@@ -58,9 +63,17 @@ def letting(request, letting_id):
         HttpResponse: The response object which renders
         the 'lettings/letting.html' template with the context data.
     """
-    letting = Letting.objects.get(id=letting_id)
-    context = {
-        "title": letting.title,
-        "address": letting.address,
-    }
-    return render(request, "lettings/letting.html", context)
+
+    try:
+        letting = Letting.objects.get(id=letting_id)
+        context = {
+            "title": letting.title,
+            "address": letting.address,
+        }
+        return render(request, "lettings/letting.html", context)
+    except Letting.DoesNotExist:
+        logging.error(f"Letting with id {letting_id} does not exist.")
+        return render(request, "404.html", status=404)
+    except Exception as e:
+        logging.error(f"An unexpected error occurred: {e}")
+        return render(request, "500.html", status=500)
