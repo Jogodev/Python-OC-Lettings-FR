@@ -62,11 +62,11 @@ jobs:
 
       - name: Get Git commit hash
         id: git-commit
-        run: echo "COMMIT-HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV 
+        run: echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV 
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:${{ env.COMMIT-HASH }} 
+          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:${{ env.COMMIT_HASH }} 
