@@ -1,10 +1,10 @@
 import os
+from dotenv import load_dotenv
 import sentry_sdk
-
+from sentry_sdk.integrations.django import DjangoIntegration
 from pathlib import Path
 
-from config import SENTRY_DSN
-
+load_dotenv()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -14,8 +14,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
+SENTRY_DSN = os.getenv("SENTRY_DSN")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
@@ -125,8 +126,11 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
+# Sentry
+print(SENTRY_DSN)
 sentry_sdk.init(
     dsn=SENTRY_DSN,
+    integrations=[DjangoIntegration()],
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
 )
