@@ -38,7 +38,7 @@ class ProfileViewTests(TestCase):
             "profiles.views.Profile.objects.get",
             side_effect=Exception("Unexpected error"),
         ):
-            with self.assertLogs("django.request", level="ERROR") as log:
+            with self.assertLogs("django.request", level="ERROR"):
                 url = reverse("profiles:profile", args=[self.user.username])
                 response = self.client.get(url)
 
