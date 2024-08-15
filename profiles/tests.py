@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from profiles.models import Profile, User
+from unittest.mock import patch
 
 
 class ProfileViewTests(TestCase):
@@ -24,3 +25,35 @@ class ProfileViewTests(TestCase):
     def test_profiles_models(self):
         response = self.client.get(reverse("profiles:index"))
         self.assertContains(response, self.profile.user.username)
+
+    def test_profile_view_not_found(self):
+        response = self.client.get(
+            reverse("profiles:profile", args=["nonexistentuser"])
+        )
+        self.assertEqual(response.status_code, 404)
+        self.assertTemplateUsed(response, "404.html")
+
+    def test_profile_view_with_unexpected_error(self):
+        with patch(
+            "profiles.views.Profile.objects.get",
+            side_effect=Exception("Unexpected error"),
+        ):
+            with self.assertLogs("django.request", level="ERROR"):
+                url = reverse("profiles:profile", args=[self.user.username])
+                response = self.client.get(url)
+
+                # Vérifie si la page 500 est rendue en cas d'erreur
+                self.assertEqual(response.status_code, 500)
+                self.assertTemplateUsed(response, "500.html")
+
+    def test_index_view_with_unexpected_error(self):
+        with patch(
+            "profiles.views.Profile.objects.all",
+            side_effect=Exception("Unexpected error"),
+        ):
+            with self.assertLogs("django.request", level="ERROR"):
+                url = reverse("profiles:index")
+                response = self.client.get(url)
+
+                self.assertEqual(response.status_code, 500)
+                self.assertTemplateUsed(response, "500.html")

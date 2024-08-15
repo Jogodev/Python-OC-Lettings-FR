@@ -85,3 +85,12 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+### Déploiement automatique
+- Si un commit est poussé sur la branche master une image docker est générée et poussée sur le docker hub.
+Un webhook déclenche alors le déploiement sur azure.
+
+### Déploiement manuel
+- Créé une image: ``docker build -t [nom-user-dockerhub]/[nom-de-l'img]:[tag] .``
+- Poussser l'image sur DockerHub: ``docker push [nom-user-dockerhub]/[nom-de-l'img]:[tag]``
+
