@@ -69,5 +69,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/oc_lettings:latest 
+          tags: |
+                ${{ secrets.DOCKER_USERNAME }}/oc_lettings:latest 
                 ${{ secrets.DOCKER_USERNAME }}/oc_lettings:${{ env.COMMIT_HASH }}
