@@ -21,7 +21,7 @@ class LettingsTest(TestCase):
         response = self.client.get(reverse("lettings:index"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "lettings/index.html")
-        self.assertNotContains(response, self.letting1.title)    
+        self.assertNotContains(response, self.letting1.title)
 
     def test_all_lettings(self):
         response = self.client.get(reverse("lettings:index"))
@@ -43,4 +43,4 @@ class LettingsTest(TestCase):
     def test_letting_view_not_found(self):
         response = self.client.get(reverse("lettings:letting", args=[999]))
         self.assertEqual(response.status_code, 404)
-        self.assertTemplateUsed(response, "404.html")    
+        self.assertTemplateUsed(response, "404.html")
