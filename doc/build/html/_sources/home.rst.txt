@@ -1,5 +1,5 @@
 Home
-========
+====
 
 .. automodule:: home.views
     :members: index

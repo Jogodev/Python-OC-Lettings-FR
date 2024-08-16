@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; Lettings  1.0 documentation</title>
+  <title>Interfaces &mdash; Lettings  1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -18,8 +19,10 @@
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Home" href="home.html" />
+    <link rel="prev" title="Database structure and models" href="database.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,7 +45,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Summary:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="description.html">Project Description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="instruction.html">Get the project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
@@ -50,7 +53,13 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html#with-the-last-image-on-docker-hub">With the last image on Docker Hub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies and languages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="database.html">Database structure and models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interfaces.html">Interfaces</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Interfaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="home.html">Home</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings.html">Lettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html">Profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oc_lettings_site.html">Error views</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="userguide.html">User guide</a></li>
 </ul>
@@ -69,8 +78,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Index</li>
+      <li class="breadcrumb-item active">Interfaces</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/interfaces.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -78,129 +88,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- <a href="#C"><strong>C</strong></a>
- | <a href="#H"><strong>H</strong></a>
- | <a href="#I"><strong>I</strong></a>
- | <a href="#L"><strong>L</strong></a>
- | <a href="#M"><strong>M</strong></a>
- | <a href="#O"><strong>O</strong></a>
- | <a href="#P"><strong>P</strong></a>
- 
+  <section id="interfaces">
+<h1>Interfaces<a class="headerlink" href="#interfaces" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="home.html">Home</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="home.html#home.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lettings.html">Lettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lettings.html#lettings.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings.html#lettings.views.letting"><code class="docutils literal notranslate"><span class="pre">letting()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html">Profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html#profiles.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles.html#profiles.views.profile"><code class="docutils literal notranslate"><span class="pre">profile()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="oc_lettings_site.html">Error views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="oc_lettings_site.html#oc_lettings_site.views.custom_404_view"><code class="docutils literal notranslate"><span class="pre">custom_404_view()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="oc_lettings_site.html#oc_lettings_site.views.custom_500_view"><code class="docutils literal notranslate"><span class="pre">custom_500_view()</span></code></a></li>
+</ul>
+</li>
+</ul>
 </div>
-<h2 id="C">C</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="oc_lettings_site.html#oc_lettings_site.views.custom_404_view">custom_404_view() (in module oc_lettings_site.views)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="oc_lettings_site.html#oc_lettings_site.views.custom_500_view">custom_500_view() (in module oc_lettings_site.views)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="H">H</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    home.views
-
-      <ul>
-        <li><a href="home.html#module-home.views">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="I">I</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="home.html#home.views.index">index() (in module home.views)</a>
-
-      <ul>
-        <li><a href="lettings.html#lettings.views.index">(in module lettings.views)</a>
-</li>
-        <li><a href="profiles.html#profiles.views.index">(in module profiles.views)</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="L">L</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="lettings.html#lettings.views.letting">letting() (in module lettings.views)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    lettings.views
-
-      <ul>
-        <li><a href="lettings.html#module-lettings.views">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="M">M</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    module
-
-      <ul>
-        <li><a href="home.html#module-home.views">home.views</a>
-</li>
-        <li><a href="lettings.html#module-lettings.views">lettings.views</a>
-</li>
-        <li><a href="oc_lettings_site.html#module-oc_lettings_site.views">oc_lettings_site.views</a>
-</li>
-        <li><a href="profiles.html#module-profiles.views">profiles.views</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="O">O</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    oc_lettings_site.views
-
-      <ul>
-        <li><a href="oc_lettings_site.html#module-oc_lettings_site.views">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="P">P</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="profiles.html#profiles.views.profile">profile() (in module profiles.views)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li>
-    profiles.views
-
-      <ul>
-        <li><a href="profiles.html#module-profiles.views">module</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="database.html" class="btn btn-neutral float-left" title="Database structure and models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="home.html" class="btn btn-neutral float-right" title="Home" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
