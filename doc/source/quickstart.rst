@@ -26,6 +26,8 @@ Quick Start
 
     SECRET_KEY = « Your django SECRET KET »
 
+    DEBUG = boolean
+
 5. **Run the development server** ::
 
     python manage.py runserver         
@@ -44,3 +46,10 @@ With docker
     docker run -d -p [8000:8000] [tag]
 
 3. Go to your browser at the address http://localhost:8000
+
+With the last image on Docker Hub
+=================================
+
+1. **Make sure you create a .env file** ::
+
+    docker run -d --pull always -p 8000:8000 --env-file .env [username]/[image-name]:[tag]
