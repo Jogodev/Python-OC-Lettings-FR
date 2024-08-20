@@ -1,11 +1,11 @@
 ![Python](https://img.shields.io/badge/python-3.11-blue?style=flat&logo=python)
 ![Azure](https://img.shields.io/badge/Azure-blue?style=flat&logo=azure)
 ![Sentry](https://img.shields.io/badge/sentry-2.3.1-blue?style=flat&logo=sentry)
-![Django](https://img.shields.io/badge/django-3.0-brightgreen?style=flat&logo=django)
+![Django](https://img.shields.io/badge/django-3.0-blackgreen?style=flat&logo=django)
 ![GitHub Actions](https://img.shields.io/badge/github-actions-green?style=flat&logo=github-actions)
 ![SQLite](https://img.shields.io/badge/SQLite-3.x-blue?style=flat&logo=sqlite)
 ![Docker](https://img.shields.io/badge/Docker-27.0.3-blue?style=flat&logo=docker)
-
+[![CI/CD status](https://github.com/Jogodev/Python-OC-Lettings-FR/actions/workflows/config.yml/badge.svg?branch=master)](https://github.com/Jogodev/Python-OC-Lettings-FR/actions/workflows/config.yml)
 
 
 ## Résumé
