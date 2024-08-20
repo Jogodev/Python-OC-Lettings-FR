@@ -5,7 +5,7 @@
 ![GitHub Actions](https://img.shields.io/badge/github-actions-green?style=flat&logo=github-actions)
 ![SQLite](https://img.shields.io/badge/SQLite-3.x-blue?style=flat&logo=sqlite)
 ![Docker](https://img.shields.io/badge/Docker-27.0.3-blue?style=flat&logo=docker)
-[![Lettings site CI/CD](https://github.com/Jogodev/Python-OC-Lettings-FR/actions/workflows/config.yml/badge.svg)](https://github.com/Jogodev/Python-OC-Lettings-FR/actions/workflows/config.yml)
+![Lettings site CI/CD](https://github.com/Jogodev/Python-OC-Lettings-FR/actions/workflows/config.yml/badge.svg)
 
 ## Résumé
 
