@@ -1,4 +1,4 @@
-name: Lettings site CI
+name: Lettings site CI/CD
 
 on: 
   push:
