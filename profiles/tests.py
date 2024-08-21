@@ -41,8 +41,6 @@ class ProfileViewTests(TestCase):
             with self.assertLogs("django.request", level="ERROR"):
                 url = reverse("profiles:profile", args=[self.user.username])
                 response = self.client.get(url)
-
-                # Vérifie si la page 500 est rendue en cas d'erreur
                 self.assertEqual(response.status_code, 500)
                 self.assertTemplateUsed(response, "500.html")
 
